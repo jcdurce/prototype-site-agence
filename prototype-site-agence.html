@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NexaDev — Agence de développement digital</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.4.1/tailwind.min.js"></script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; }
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="bg-white text-slate-900 antialiased">
+
+<!-- ===== HEADER ===== -->
+<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#" class="flex items-center gap-2 font-bold text-lg">
+      <span class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center text-sm">&lt;/&gt;</span>
+      NexaDev
+    </a>
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+      <a href="#" class="text-slate-900">Accueil</a>
+      <a href="#services" class="hover:text-slate-900 transition">Services</a>
+      <a href="#projets" class="hover:text-slate-900 transition">Projets</a>
+      <a href="#" class="hover:text-slate-900 transition">À propos</a>
+      <a href="#" class="hover:text-slate-900 transition">Blog</a>
+      <a href="#contact" class="hover:text-slate-900 transition">Contact</a>
+    </nav>
+    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 transition text-white text-sm font-semibold px-4 py-2.5 rounded-lg">
+      Demander un devis
+    </a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="max-w-7xl mx-auto px-6 pt-16 pb-20 grid md:grid-cols-2 gap-12 items-center">
+  <div>
+    <h1 class="text-4xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight">
+      Nous créons des
+      <span class="text-blue-600">expériences digitales</span>
+      qui font la différence
+    </h1>
+    <p class="mt-6 text-slate-500 text-lg leading-relaxed max-w-md">
+      NexaDev est une agence de développement, UX/UI et design web.
+      Nous transformons vos idées en solutions digitales performantes et élégantes.
+    </p>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="#projets" class="bg-blue-600 hover:bg-blue-700 transition text-white font-semibold px-6 py-3 rounded-lg">
+        Voir nos projets
+      </a>
+      <a href="#services" class="border border-slate-200 hover:border-slate-300 transition font-semibold px-6 py-3 rounded-lg text-slate-700">
+        Nos services
+      </a>
+    </div>
+  </div>
+
+  <div class="relative">
+    <div class="bg-slate-900 rounded-2xl shadow-xl p-4 pl-16 relative">
+      <div class="absolute left-4 top-4 bottom-4 w-10 bg-slate-800 rounded-xl flex flex-col items-center py-3 gap-3">
+        <div class="w-6 h-6 rounded bg-blue-600"></div>
+        <div class="w-6 h-6 rounded bg-slate-600"></div>
+        <div class="w-6 h-6 rounded bg-slate-600"></div>
+      </div>
+      <div class="bg-white rounded-lg p-4">
+        <div class="flex justify-between items-center mb-4 text-xs font-medium text-slate-400">
+          <span>Statistiques</span><span class="text-slate-900">Performance +24%</span>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="bg-slate-50 rounded-lg p-3">
+            <p class="text-xs text-slate-400">Utilisateurs</p>
+            <p class="text-lg font-bold">12,540</p>
+          </div>
+          <div class="bg-slate-50 rounded-lg p-3">
+            <p class="text-xs text-slate-400">Taux de conversion</p>
+            <p class="text-lg font-bold">3,26%</p>
+          </div>
+        </div>
+        <div class="mt-3 h-16 bg-blue-50 rounded-lg flex items-end px-2 pb-2 gap-1">
+          <div class="w-2 bg-blue-400 rounded-t" style="height:30%"></div>
+          <div class="w-2 bg-blue-400 rounded-t" style="height:55%"></div>
+          <div class="w-2 bg-blue-500 rounded-t" style="height:40%"></div>
+          <div class="w-2 bg-blue-500 rounded-t" style="height:70%"></div>
+          <div class="w-2 bg-blue-600 rounded-t" style="height:50%"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST LOGOS ===== -->
+<section class="border-y border-slate-100 py-10 bg-slate-50/50">
+  <p class="text-center text-xs font-medium text-slate-400 uppercase tracking-wider mb-6">Ils nous font confiance</p>
+  <div class="max-w-5xl mx-auto px-6 flex flex-wrap justify-center gap-x-12 gap-y-4 text-slate-300 text-xl font-bold">
+    <span>ACME Corp</span>
+    <span>Northwind</span>
+    <span>Vertex</span>
+    <span>Orbital</span>
+    <span>Lumen</span>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section id="services" class="max-w-7xl mx-auto px-6 py-24">
+  <div class="text-center max-w-xl mx-auto mb-14">
+    <h2 class="text-3xl font-extrabold">Nos services</h2>
+    <p class="mt-3 text-slate-500">Des solutions complètes pour vos projets digitaux</p>
+  </div>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <!-- Card template x4 -->
+    <div class="border border-slate-100 rounded-xl p-6 hover:shadow-md hover:-translate-y-0.5 transition">
+      <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+        <i class="fa-solid fa-code"></i>
+      </div>
+      <h3 class="font-bold mb-2">Développement</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">Applications web, mobiles et solutions sur mesure avec des technologies modernes.</p>
+      <a href="#" class="inline-flex items-center gap-1 text-blue-600 text-sm font-semibold mt-4">En savoir plus <i class="fa-solid fa-arrow-right text-xs"></i></a>
+    </div>
+    <div class="border border-slate-100 rounded-xl p-6 hover:shadow-md hover:-translate-y-0.5 transition">
+      <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+        <i class="fa-regular fa-object-ungroup"></i>
+      </div>
+      <h3 class="font-bold mb-2">UX / UI Design</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">Interfaces intuitives et expériences utilisateur centrées sur vos objectifs.</p>
+      <a href="#" class="inline-flex items-center gap-1 text-blue-600 text-sm font-semibold mt-4">En savoir plus <i class="fa-solid fa-arrow-right text-xs"></i></a>
+    </div>
+    <div class="border border-slate-100 rounded-xl p-6 hover:shadow-md hover:-translate-y-0.5 transition">
+      <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+        <i class="fa-solid fa-pen-nib"></i>
+      </div>
+      <h3 class="font-bold mb-2">Design Web</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">Designs modernes, responsive et optimisés pour tous les appareils.</p>
+      <a href="#" class="inline-flex items-center gap-1 text-blue-600 text-sm font-semibold mt-4">En savoir plus <i class="fa-solid fa-arrow-right text-xs"></i></a>
+    </div>
+    <div class="border border-slate-100 rounded-xl p-6 hover:shadow-md hover:-translate-y-0.5 transition">
+      <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+        <i class="fa-solid fa-rocket"></i>
+      </div>
+      <h3 class="font-bold mb-2">Solutions Digitales</h3>
+      <p class="text-sm text-slate-500 leading-relaxed">Accompagnement stratégique pour transformer votre vision en produit.</p>
+      <a href="#" class="inline-flex items-center gap-1 text-blue-600 text-sm font-semibold mt-4">En savoir plus <i class="fa-solid fa-arrow-right text-xs"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJETS RECENTS (dark) ===== -->
+<section id="projets" class="bg-slate-950 text-white py-24">
+  <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-[1fr_2fr] gap-12 items-center">
+    <div>
+      <h2 class="text-3xl font-extrabold">Nos projets récents</h2>
+      <p class="mt-3 text-slate-400">Découvrez quelques-unes de nos réalisations.</p>
+      <a href="#" class="inline-block mt-6 bg-blue-600 hover:bg-blue-700 transition font-semibold px-5 py-2.5 rounded-lg text-sm">
+        Voir tous les projets
+      </a>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-5">
+      <div class="rounded-xl overflow-hidden bg-slate-900 border border-slate-800">
+        <img src="https://images.unsplash.com/photo-1686061593213-98dad7c599b9?w=800&q=80&auto=format&fit=crop" alt="Dashboard Analytics" class="h-36 w-full object-cover">
+        <div class="p-4">
+          <p class="font-semibold text-sm">Dashboard Analytics</p>
+          <p class="text-xs text-slate-400 mt-1">UI/UX Design</p>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden bg-slate-900 border border-slate-800">
+        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80&auto=format&fit=crop" alt="Application Mobile" class="h-36 w-full object-cover">
+        <div class="p-4">
+          <p class="font-semibold text-sm">Application Mobile</p>
+          <p class="text-xs text-slate-400 mt-1">Développement iOS &amp; Android</p>
+        </div>
+      </div>
+      <div class="rounded-xl overflow-hidden bg-slate-900 border border-slate-800">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=800&q=80&auto=format&fit=crop" alt="Plateforme E-learning" class="h-36 w-full object-cover">
+        <div class="p-4">
+          <p class="font-semibold text-sm">Plateforme E-learning</p>
+          <p class="text-xs text-slate-400 mt-1">Développement Web</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== POURQUOI NOUS CHOISIR ===== -->
+<section class="max-w-7xl mx-auto px-6 py-24">
+  <h2 class="text-3xl font-extrabold text-center mb-14">Pourquoi nous choisir ?</h2>
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div class="text-center">
+      <div class="w-12 h-12 mx-auto rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <h3 class="font-bold mb-1">Expertise</h3>
+      <p class="text-sm text-slate-500">Une équipe expérimentée et passionnée par le digital.</p>
+    </div>
+    <div class="text-center">
+      <div class="w-12 h-12 mx-auto rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+        <i class="fa-solid fa-award"></i>
+      </div>
+      <h3 class="font-bold mb-1">Qualité</h3>
+      <p class="text-sm text-slate-500">Des solutions fiables, performantes et évolutives.</p>
+    </div>
+    <div class="text-center">
+      <div class="w-12 h-12 mx-auto rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+        <i class="fa-solid fa-users"></i>
+      </div>
+      <h3 class="font-bold mb-1">Approche centrée utilisateur</h3>
+      <p class="text-sm text-slate-500">Nous plaçons vos utilisateurs au cœur de nos décisions.</p>
+    </div>
+    <div class="text-center">
+      <div class="w-12 h-12 mx-auto rounded-full bg-blue-50 text-blue-600 flex items-center justify-center mb-4">
+        <i class="fa-solid fa-headset"></i>
+      </div>
+      <h3 class="font-bold mb-1">Support</h3>
+      <p class="text-sm text-slate-500">Un accompagnement continu à chaque étape du projet.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section id="contact" class="bg-blue-600 text-white">
+  <div class="max-w-7xl mx-auto px-6 py-14 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div>
+      <h2 class="text-2xl font-extrabold">Prêt à démarrer votre projet ?</h2>
+      <p class="mt-2 text-blue-100">Discutons de vos idées et transformons-les en réalité.</p>
+    </div>
+    <a href="#" class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg whitespace-nowrap hover:bg-blue-50 transition">
+      Contactez-nous
+    </a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="bg-slate-950 text-slate-400 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <div>
+      <a href="#" class="flex items-center gap-2 font-bold text-lg text-white mb-3">
+        <span class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center text-sm">&lt;/&gt;</span>
+        NexaDev
+      </a>
+      <p class="text-sm leading-relaxed">Agence digitale spécialisée en développement, UX/UI et design web.</p>
+      <div class="flex gap-3 mt-4 text-sm">
+        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-slate-700 transition"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-slate-700 transition"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-slate-700 transition"><i class="fa-brands fa-github"></i></a>
+      </div>
+    </div>
+    <div>
+      <p class="text-white font-semibold mb-3">Navigation</p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-white transition">Accueil</a></li>
+        <li><a href="#services" class="hover:text-white transition">Services</a></li>
+        <li><a href="#projets" class="hover:text-white transition">Projets</a></li>
+        <li><a href="#" class="hover:text-white transition">À propos</a></li>
+        <li><a href="#" class="hover:text-white transition">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-white font-semibold mb-3">Services</p>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-white transition">Développement</a></li>
+        <li><a href="#" class="hover:text-white transition">UX / UI Design</a></li>
+        <li><a href="#" class="hover:text-white transition">Design Web</a></li>
+        <li><a href="#" class="hover:text-white transition">Solutions Digitales</a></li>
+      </ul>
+    </div>
+    <div>
+      <p class="text-white font-semibold mb-3">Contact</p>
+      <ul class="space-y-3 text-sm">
+        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope w-4"></i> hello@nexadev.com</li>
+        <li class="flex items-center gap-2"><i class="fa-solid fa-phone w-4"></i> +33 6 12 34 56 78</li>
+        <li class="flex items-start gap-2"><i class="fa-solid fa-location-dot w-4 mt-0.5"></i> 123 Rue de la République<br>75001 Paris, France</li>
+      </ul>
+    </div>
+  </div>
+  <div class="max-w-7xl mx-auto px-6 mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-3 text-xs">
+    <p>© 2026 NexaDev. Tous droits réservés.</p>
+    <div class="flex gap-6">
+      <a href="#" class="hover:text-white transition">Mentions légales</a>
+      <a href="#" class="hover:text-white transition">Politique de confidentialité</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
