@@ -4,39 +4,57 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NexaDev — Agence de développement digital</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.4.1/tailwind.min.js"></script>
+<meta name="description" content="NexaDev — Agence digitale spécialisée en développement, UX/UI et design web. Transformons vos idées en produits digitaux performants.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<meta property="og:title" content="NexaDev — Agence de développement digital">
+<meta property="og:description" content="Agence digitale spécialisée en développement, UX/UI et design web.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<link rel="icon" href="/favicon.ico">
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.4.1/tailwind.min.js"></script>
 <style>
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', system-ui, sans-serif; }
+  /* Skip link visible on focus */
+  .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+  .skip-link:focus { left: 1rem; top: 1rem; width: auto; height: auto; padding: 0.5rem 0.75rem; background: #0369a1; color: #fff; border-radius: 0.375rem; z-index: 999; }
+  :focus { outline: 2px solid #0369a1; outline-offset: 2px; }
 </style>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body class="bg-white text-slate-900 antialiased">
+  <a href="#main" class="skip-link">Passer au contenu</a>
 
 <!-- ===== HEADER ===== -->
 <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-100">
   <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-    <a href="#" class="flex items-center gap-2 font-bold text-lg">
+    <a href="#" class="flex items-center gap-2 font-bold text-lg" aria-label="NexaDev - Accueil">
       <span class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center text-sm">&lt;/&gt;</span>
       NexaDev
     </a>
-    <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
-      <a href="#" class="text-slate-900">Accueil</a>
-      <a href="#services" class="hover:text-slate-900 transition">Services</a>
-      <a href="#projets" class="hover:text-slate-900 transition">Projets</a>
-      <a href="#" class="hover:text-slate-900 transition">À propos</a>
-      <a href="#" class="hover:text-slate-900 transition">Blog</a>
-      <a href="#contact" class="hover:text-slate-900 transition">Contact</a>
+    <nav class="flex items-center gap-4 text-sm font-medium text-slate-600" role="navigation" aria-label="Navigation principale">
+      <button id="nav-toggle" class="md:hidden p-2 rounded-md focus:ring-2 focus:ring-blue-500" aria-expanded="false" aria-controls="primary-navigation" aria-label="Ouvrir le menu">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      </button>
+      <div id="primary-navigation" class="hidden md:flex items-center gap-8" role="menubar">
+        <a href="#" class="text-slate-900" role="menuitem">Accueil</a>
+        <a href="#services" class="hover:text-slate-900 transition" role="menuitem">Services</a>
+        <a href="#projets" class="hover:text-slate-900 transition" role="menuitem">Projets</a>
+        <a href="#" class="hover:text-slate-900 transition" role="menuitem">À propos</a>
+        <a href="#" class="hover:text-slate-900 transition" role="menuitem">Blog</a>
+        <a href="#contact" class="hover:text-slate-900 transition" role="menuitem">Contact</a>
+      </div>
     </nav>
-    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 transition text-white text-sm font-semibold px-4 py-2.5 rounded-lg">
+    <a href="#contact" class="hidden md:inline-block bg-blue-600 hover:bg-blue-700 transition text-white text-sm font-semibold px-4 py-2.5 rounded-lg">
       Demander un devis
     </a>
   </div>
 </header>
 
 <!-- ===== HERO ===== -->
-<section class="max-w-7xl mx-auto px-6 pt-16 pb-20 grid md:grid-cols-2 gap-12 items-center">
+<section id="main" class="max-w-7xl mx-auto px-6 pt-16 pb-20 grid md:grid-cols-2 gap-12 items-center">
   <div>
     <h1 class="text-4xl sm:text-5xl font-extrabold leading-[1.1] tracking-tight">
       Nous créons des
@@ -223,7 +241,7 @@
       <h2 class="text-2xl font-extrabold text-center">Prêt à démarrer votre projet ?</h2>
       <p class="mt-2 text-blue-100 text-center">Discutons de vos idées et transformons-les en réalité.</p>
 
-      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="mt-8 bg-white rounded-xl p-6 text-slate-900">
+      <form name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" class="mt-8 bg-white rounded-xl p-6 text-slate-900">
         <input type="hidden" name="form-name" value="contact">
         <p class="hidden"><label>Ne pas remplir <input name="bot-field"></label></p>
 
