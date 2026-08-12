@@ -216,16 +216,38 @@
   </div>
 </section>
 
-<!-- ===== CTA ===== -->
+<!-- ===== CONTACT ===== -->
 <section id="contact" class="bg-blue-600 text-white">
-  <div class="max-w-7xl mx-auto px-6 py-14 flex flex-col md:flex-row items-center justify-between gap-6">
-    <div>
-      <h2 class="text-2xl font-extrabold">Prêt à démarrer votre projet ?</h2>
-      <p class="mt-2 text-blue-100">Discutons de vos idées et transformons-les en réalité.</p>
+  <div class="max-w-7xl mx-auto px-6 py-14">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-2xl font-extrabold text-center">Prêt à démarrer votre projet ?</h2>
+      <p class="mt-2 text-blue-100 text-center">Discutons de vos idées et transformons-les en réalité.</p>
+
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="mt-8 bg-white rounded-xl p-6 text-slate-900">
+        <input type="hidden" name="form-name" value="contact">
+        <p class="hidden"><label>Ne pas remplir <input name="bot-field"></label></p>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <div>
+            <label class="text-sm font-medium">Nom</label>
+            <input type="text" name="name" required class="mt-1 w-full rounded-md border-gray-200 shadow-sm px-3 py-2" />
+          </div>
+          <div>
+            <label class="text-sm font-medium">Email</label>
+            <input type="email" name="email" required class="mt-1 w-full rounded-md border-gray-200 shadow-sm px-3 py-2" />
+          </div>
+          <div class="md:col-span-2">
+            <label class="text-sm font-medium">Message</label>
+            <textarea name="message" rows="5" required class="mt-1 w-full rounded-md border-gray-200 shadow-sm px-3 py-2"></textarea>
+          </div>
+        </div>
+
+        <div class="mt-4 flex items-center justify-between gap-4">
+          <button type="submit" class="bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-700 transition">Envoyer</button>
+          <p class="text-sm text-slate-200">Nous répondrons sous 48h.</p>
+        </div>
+      </form>
     </div>
-    <a href="#" class="bg-white text-blue-600 font-semibold px-6 py-3 rounded-lg whitespace-nowrap hover:bg-blue-50 transition">
-      Contactez-nous
-    </a>
   </div>
 </section>
 
