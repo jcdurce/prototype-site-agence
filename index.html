@@ -241,9 +241,10 @@
       <h2 class="text-2xl font-extrabold text-center">Prêt à démarrer votre projet ?</h2>
       <p class="mt-2 text-blue-100 text-center">Discutons de vos idées et transformons-les en réalité.</p>
 
-      <form name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" class="mt-8 bg-white rounded-xl p-6 text-slate-900">
+      <form id="contact-form" name="contact" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="bot-field" novalidate class="mt-8 bg-white rounded-xl p-6 text-slate-900" aria-describedby="form-status" role="form">
         <input type="hidden" name="form-name" value="contact">
         <p class="hidden"><label>Ne pas remplir <input name="bot-field"></label></p>
+        <div id="form-status" role="status" aria-live="polite" class="sr-only"></div>
 
         <div class="grid md:grid-cols-2 gap-4">
           <div>
@@ -325,25 +326,79 @@
   document.addEventListener('DOMContentLoaded', function() {
     var navToggle = document.getElementById('nav-toggle');
     var nav = document.getElementById('primary-navigation');
-    if (!navToggle || !nav) return;
-    navToggle.addEventListener('click', function() {
-      var isOpen = nav.classList.toggle('hidden') === false;
-      navToggle.setAttribute('aria-expanded', String(isOpen));
-      if (isOpen) {
-        var first = nav.querySelector('a');
-        if (first) first.focus();
-      }
-    });
+    if (navToggle && nav) {
+      navToggle.addEventListener('click', function() {
+        var isOpen = nav.classList.toggle('hidden') === false;
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+        if (isOpen) {
+          var first = nav.querySelector('a');
+          if (first) first.focus();
+        }
+      });
+    }
     // Close menu with Escape key when open
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
-        if (!nav.classList.contains('hidden')) {
+        if (nav && !nav.classList.contains('hidden')) {
           nav.classList.add('hidden');
           navToggle.setAttribute('aria-expanded', 'false');
           navToggle.focus();
         }
       }
     });
+
+    // Form handling: client-side validation and AJAX submit to Netlify (fallback to action when JS disabled)
+    var form = document.getElementById('contact-form');
+    var status = document.getElementById('form-status');
+    if (form && status) {
+      function setStatus(msg, isError) {
+        status.textContent = msg;
+        status.classList.remove('sr-only');
+        status.classList.toggle('text-red-600', !!isError);
+        status.classList.toggle('text-green-600', !isError);
+      }
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // reset status
+        status.classList.add('sr-only');
+        status.textContent = '';
+        var name = form.querySelector('[name=name]');
+        var email = form.querySelector('[name=email]');
+        var message = form.querySelector('[name=message]');
+        var errors = [];
+        var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!name.value.trim()) errors.push('Le nom est requis.');
+        if (!email.value.trim() || !emailRe.test(email.value.trim())) errors.push('Email invalide.');
+        if (!message.value.trim()) errors.push('Le message est requis.');
+        if (errors.length) {
+          setStatus(errors.join(' '), true);
+          if (!name.value.trim()) name.focus();
+          else if (!emailRe.test(email.value.trim())) email.focus();
+          else message.focus();
+          return;
+        }
+        var formData = new FormData(form);
+        var encode = function(data) {
+          return Array.from(data.entries()).map(function(pair) {
+            return encodeURIComponent(pair[0]) + '=' + encodeURIComponent(pair[1]);
+          }).join('&');
+        };
+        var body = encode(formData);
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: body
+        }).then(function(resp) {
+          if (resp.ok) {
+            form.innerHTML = '<div class="p-6 text-center"><h3 class="text-lg font-semibold text-green-600">Merci !</h3><p class="mt-2 text-slate-700">Votre message a bien été envoyé, nous vous contacterons sous 48h.</p><a href="/" class="inline-block mt-4 bg-blue-600 text-white px-4 py-2 rounded">Retour</a></div>';
+          } else {
+            setStatus('Erreur serveur, veuillez r\u00e9essayer plus tard.', true);
+          }
+        }).catch(function(err) {
+          setStatus("Impossible d'envoyer le message. Vérifiez votre connexion.", true);
+        });
+      });
+    }
   });
 </script>
 
