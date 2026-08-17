@@ -8,5 +8,16 @@
   <body>
     <!-- Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <!-- Netlify Identity Widget (for Git Gateway login) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+      // Initialize Identity widget (if Netlify Identity enabled)
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', user => {
+          // user is null if not logged in
+        });
+        window.netlifyIdentity.init();
+      }
+    </script>
   </body>
 </html>
