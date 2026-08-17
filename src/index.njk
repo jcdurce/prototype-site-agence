@@ -1,0 +1,19 @@
+---
+layout: "layouts/base.njk"
+title: "NexaDev — Blog"
+---
+
+<h1 class="text-3xl font-extrabold mb-6">Articles récents</h1>
+
+<ul class="space-y-6">
+  {% for post in collections.posts | reverse %}
+    <li>
+      <article>
+        <h2 class="text-2xl font-semibold"><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        <p class="text-sm text-slate-500">{{ post.date | date("dd LLLL yyyy") }} • {{ post.data.author }}</p>
+        <p class="mt-2">{{ post.templateContent | truncate(200) }}</p>
+        <a class="text-blue-600 mt-2 inline-block" href="{{ post.url }}">Lire la suite →</a>
+      </article>
+    </li>
+  {% endfor %}
+</ul>
