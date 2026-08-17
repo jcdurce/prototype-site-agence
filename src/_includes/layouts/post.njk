@@ -1,0 +1,8 @@
+---
+layout: "layouts/base.njk"
+---
+<article>
+  <h1 class="text-3xl font-extrabold mb-2">{{ title }}</h1>
+  <p class="text-sm text-slate-500">{{ date | date("dd LLLL yyyy") }} • {{ author }}</p>
+  <div class="prose mt-6">{{ content | safe }}</div>
+</article>
